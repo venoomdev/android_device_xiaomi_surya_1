@@ -14,22 +14,24 @@ allow devicesettings_app {
   autofill_service
   cameraserver_service
   drmserver_service
+  gpu_service
   media_session_service
   mediaextractor_service
   mediametrics_service
   mediaserver_service
   surfaceflinger_service
+  tethering_service
 }:service_manager find;
 
 # Allow devicesettings_app read and write /data/data subdirectory
 allow devicesettings_app system_app_data_file:dir create_dir_perms;
 allow devicesettings_app system_app_data_file:{ file lnk_file } create_file_perms;
 
+allow devicesettings_app kcal_dev:dir search;
+allow devicesettings_app kcal_dev:file rw_file_perms;
+
 get_prop(devicesettings_app, persist_lcd_prop)
 set_prop(devicesettings_app, persist_lcd_prop)
-
-# Allow devicesettings_app read props
-allow devicesettings_app default_prop:file { read };
 
 # Allow binder communication with gpuservice
 binder_call(devicesettings_app, gpuservice)

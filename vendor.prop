@@ -117,10 +117,73 @@ persist.vendor.data.iwlan.enable=true
 persist.vendor.data.mode=concurrent
 ro.telephony.iwlan_operation_mode=legacy
 
+# ART
+dalvik.vm.dex2oat64.enabled=true
+ro.vendor.qti.am.reschedule_service=true
+ro.dex2oat_white_list=com.google.android.gms
+ro.sys.fw.dex2oat_thread_count=8
+dalvik.vm.boot-dex2oat-cpu-set=0,1,2,3,4,5,6,7
+dalvik.vm.boot-dex2oat-threads=8
+dalvik.vm.dex2oat-threads=8
+dalvik.vm.dex2oat-cpu-set=0,1,2,3,4,5,6,7
+dalvik.vm.dex2oat-filter=speed-profile
+dalvik.vm.dex2oat-threads=8
+dalvik.vm.image-dex2oat-cpu-set=0,1,2,3,4,5,6,7
+dalvik.vm.image-dex2oat-filter=speed-profile
+dalvik.vm.image-dex2oat-threads=8
+dalvik.vm.dex2oat-minidebuginfo=false
+dalvik.vm.minidebuginfo=false
+
+# dalvik
+pm.dexopt.boot=speed-profile
+pm.dexopt.first-boot=speed-profile
+pm.dexopt.ab-ota=speed-profile
+pm.dexopt.install=speed-profile
+pm.dexopt.downgrade_after_inactive_days=10
+pm.dexopt.shared=quicken
+
+# heap config
+dalvik.vm.heapstartsize=8m
+dalvik.vm.heapgrowthlimit=256m
+dalvik.vm.heapsize=512m
+dalvik.vm.heaptargetutilization=0.75
+dalvik.vm.heapminfree=2m
+dalvik.vm.heapmaxfree=8m
+
 # DPM
 persist.vendor.dpm.feature=1
 persist.vendor.dpm.nsrm.bkg.evt=3955
 persist.vendor.dpmhalservice.enable=1
+
+# memory opts
+ro.vendor.qti.sys.fw.bservice_enable=true
+ro.sys.fw.bservice_limit=64
+ro.sys.fw.bservice_age=10000
+ro.sys.fw.use_trim_settings=true
+ro.am.reschedule_service=true
+ro.config.dha_cached_min=5
+ro.config.dha_cached_max=20
+ro.config.dha_empty_init=40
+ro.config.dha_empty_max=40
+ro.config.dha_pwhitelist_enable=1
+ro.config.dha_lmk_scale=0.414
+ro.config.sdha_apps_bg_max=60
+
+# graphics
+debug.hwui.renderer=skiagl
+debug.renderengine.backend=skiaglthreaded
+renderthread.skia.reduceopstasksplitting=true
+debug.cpurend.vsync=false
+debug.sf.enable_gl_backpressure=1
+debug.sf.disable_client_composition_cache=1
+
+# perf
+ro.vendor.perf.scroll_opt=true
+
+# zram
+ro.zram.mark_idle_delay_mins=60
+ro.zram.first_wb_delay_mins=1440
+ro.zram.periodic_wb_delay_hours=24
 
 # Display
 debug.egl.hw=0
@@ -134,7 +197,7 @@ debug.sf.early.app.duration=16600000
 debug.sf.earlyGl.sf.duration=16600000
 debug.sf.earlyGl.app.duration=16600000
 debug.sf.enable_hwc_vds=1
-debug.sf.hw=0
+debug.sf.hw=1
 debug.sf.latch_unsignaled=0
 ro.hardware.egl=adreno
 ro.hardware.vulkan=adreno
