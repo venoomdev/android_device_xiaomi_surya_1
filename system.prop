@@ -55,3 +55,7 @@ persist.debug.wfd.enable=1
 
 # WiFi
 wifi.interface=wlan0
+
+# Dirac
+ro.audio.soundfx.dirac=true
+ro.vendor.audio.soundfx.type=dirac

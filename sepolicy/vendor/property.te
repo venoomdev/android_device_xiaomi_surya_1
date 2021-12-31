@@ -2,4 +2,4 @@
 type thermal_normal_prop, property_type;
 
 # Dirac
-vendor_internal_prop(dirac_prop);
+type dirac_prop, property_type;

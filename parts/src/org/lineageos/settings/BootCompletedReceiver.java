@@ -34,14 +34,9 @@ public class BootCompletedReceiver extends BroadcastReceiver implements Controll
     private static final String TAG = "XiaomiParts";
 
     @Override
-    public void onReceive(final Context context, Intent intent) {
-        if (DEBUG) Log.d(TAG, "Received boot completed intent");
-        try {
-        DiracUtils.initialize(context);
-        } catch (Exception e) {
-            Log.d(TAG, "Dirac is not present in system");
-        }
-            
+    public void onReceive(final Context context, Intent intent) { 
+    	if (DEBUG) Log.d(TAG, "Received boot completed intent");
+    	
         if (Settings.Secure.getInt(context.getContentResolver(), PREF_ENABLED, 0) == 1) {
             FileUtils.setValue(KCAL_ENABLE, Settings.Secure.getInt(context.getContentResolver(),
                     PREF_ENABLED, 0));
@@ -70,5 +65,6 @@ public class BootCompletedReceiver extends BroadcastReceiver implements Controll
         
         DozeUtils.checkDozeService(context);
         ThermalUtils.startService(context);
+        new DiracUtils(context).onBootCompleted();
     }
 }
