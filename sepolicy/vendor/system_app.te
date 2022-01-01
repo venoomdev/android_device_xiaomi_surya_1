@@ -10,3 +10,4 @@ binder_call(system_app, wificond)
 
 type sysfs_doze, sysfs_type, fs_type;
 allow system_app sysfs_doze:file rw_file_perms;
+allow system_app zygote:unix_stream_socket { getopt };
