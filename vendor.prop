@@ -116,13 +116,12 @@ ro.dex2oat_white_list=com.google.android.gms
 ro.sys.fw.dex2oat_thread_count=8
 dalvik.vm.boot-dex2oat-cpu-set=0,1,2,3,4,5,6,7
 dalvik.vm.boot-dex2oat-threads=8
-dalvik.vm.dex2oat-threads=8
-dalvik.vm.dex2oat-cpu-set=0,1,2,3,4,5,6,7
+dalvik.vm.dex2oat-cpu-set=0,1,2,3,4,5
+dalvik.vm.dex2oat-threads=6
 dalvik.vm.dex2oat-filter=speed-profile
-dalvik.vm.dex2oat-threads=8
-dalvik.vm.image-dex2oat-cpu-set=0,1,2,3,4,5,6,7
+dalvik.vm.image-dex2oat-cpu-set=0,1,2,3,4,5
+dalvik.vm.image-dex2oat-threads=6
 dalvik.vm.image-dex2oat-filter=speed-profile
-dalvik.vm.image-dex2oat-threads=8
 dalvik.vm.dex2oat-minidebuginfo=false
 dalvik.vm.minidebuginfo=false
 
@@ -149,9 +148,7 @@ persist.vendor.dpmhalservice.enable=1
 
 
 # graphics
-debug.hwui.renderer=skiagl
-debug.renderengine.backend=skiaglthreaded
-renderthread.skia.reduceopstasksplitting=true
+debug.hwui.renderer=opengl
 debug.cpurend.vsync=false
 debug.sf.disable_client_composition_cache=1
 
@@ -174,7 +171,7 @@ debug.sf.early.sf.duration=16600000
 debug.sf.early.app.duration=16600000
 debug.sf.earlyGl.sf.duration=16600000
 debug.sf.earlyGl.app.duration=16600000
-debug.sf.hw=1
+debug.sf.hw=0
 debug.sf.enable_hwc_vds=0
 debug.sf.frame_rate_multiple_threshold=120
 debug.sf.latch_unsignaled=0
@@ -184,7 +181,6 @@ ro.opengles.version=196610
 ro.surface_flinger.force_hwc_copy_for_virtual_displays=true
 ro.surface_flinger.has_wide_color_display=false
 ro.surface_flinger.has_HDR_display=true
-ro.surface_flinger.max_frame_buffer_acquired_buffers=3
 ro.surface_flinger.max_virtual_display_dimension=4096
 ro.surface_flinger.use_color_management=true
 ro.surface_flinger.wcg_composition_dataspace=143261696
