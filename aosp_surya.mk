@@ -26,6 +26,7 @@ $(call inherit-product, vendor/aosp/common.mk)
 ARCANA_OFFICIAL := true
 ARCANA_MAINTAINER := dlwlrma123&hazama25
 TARGET_BOOT_ANIMATION_RES := 1080
+TARGET_SUPPORTS_BLUR := true
 
 PRODUCT_NAME := aosp_surya
 PRODUCT_DEVICE := surya
