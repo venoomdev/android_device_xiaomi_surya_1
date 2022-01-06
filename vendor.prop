@@ -169,7 +169,7 @@ ro.config.sdha_apps_bg_min=8
 ro.lmk.filecache_min_kb=153600
 
 # perf
-ro.vendor.perf.scroll_opt=true
+debug.hwui.use_buffer_age=false
 
 # zram
 ro.zram.mark_idle_delay_mins=60
