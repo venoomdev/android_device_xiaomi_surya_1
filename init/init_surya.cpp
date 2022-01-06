@@ -83,8 +83,8 @@ void vendor_load_properties() {
     std::string name;
     std::string mod_device;
 
-	fingerprint = "google/raven/raven:12/SQ1D.211205.016.A1/7957957:user/release-keys";
-	description = "raven-user 12 SQ1D.211205.016.A1 7957957 release-keys";
+        fingerprint = "google/redfin/redfin:12/SQ1A.220105.002/7961164:user/release-keys";
+        description = "redfin-user 12 SQ1A.220105.002 7961164 release-keys";
 	
     if (hwname == "surya") {
 	device = "surya";
