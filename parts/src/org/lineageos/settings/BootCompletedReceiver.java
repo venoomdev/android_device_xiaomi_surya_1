@@ -30,13 +30,10 @@ import org.lineageos.settings.doze.DozeUtils;
 import org.lineageos.settings.thermal.ThermalUtils;
 
 public class BootCompletedReceiver extends BroadcastReceiver implements Controller {
-    private static final boolean DEBUG = false;
-    private static final String TAG = "XiaomiParts";
 
     @Override
-    public void onReceive(final Context context, Intent intent) { 
-    	if (DEBUG) Log.d(TAG, "Received boot completed intent");
-    	
+    public void onReceive(final Context context, Intent intent) {
+
         if (Settings.Secure.getInt(context.getContentResolver(), PREF_ENABLED, 0) == 1) {
             FileUtils.setValue(KCAL_ENABLE, Settings.Secure.getInt(context.getContentResolver(),
                     PREF_ENABLED, 0));
@@ -62,9 +59,10 @@ public class BootCompletedReceiver extends BroadcastReceiver implements Controll
             FileUtils.setValue(KCAL_HUE, Settings.Secure.getInt(context.getContentResolver(),
                     PREF_HUE, HUE_DEFAULT));
         }
-        
+    
+        // Dirac
+        new DiracUtils(context).onBootCompleted();
         DozeUtils.checkDozeService(context);
         ThermalUtils.startService(context);
-        new DiracUtils(context).onBootCompleted();
     }
 }
